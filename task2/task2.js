@@ -8,19 +8,18 @@
         такашто овие објекти ќе бидат составени од следните полиња:
             - "id"
             - "name"
-            - "order_id" или "campaign_id" (во зависност од типот на ресуср кој е примен како параметар) 
-            претставувајќи го нумеричкиот дел превземен од "code" полето од оригиналната низа на објекти
+            - "order_id" или "campaign_id" (во зависност од типот на ресурс кој е примен како параметар) претставувајќи го нумеричкиот дел превземен од "code" полето од оригиналната низа на објекти
             - "country" кодот (e.g. "mk") превземено од "code" полето од оригиналната низа на објекти, претставено со големи букви
             - "startDate"
             - "endDate"
  
- Пример очекуван output доколку типот на ресурси е "order":
+ Пример очекуван output доколку типот на ресурси е "campaign":
  {
   eu: [
     {
         id: 1,
         name: 'Resource #1',
-        campaigns_id: '1111',
+        campaign_id: '1111',
         country: 'UK',
         startDate: '20220101',
         endDate: '20220101'
@@ -28,7 +27,7 @@
     {
         id: 4,
         name: 'Resource #4',
-        campaigns_id: '4444',
+        campaign_id: '4444',
         country: 'ES',
         startDate: '20220101',
         endDate: '20220101'
@@ -36,7 +35,7 @@
     {
         id: 6,
         name: 'Resource #6',
-        campaigns_id: '1111',
+        campaign_id: '1111',
         country: 'MK',
         startDate: '20220101',
         endDate: '20220101'
@@ -44,7 +43,7 @@
     {
         id: 8,
         name: 'Resource #8',
-        campaigns_id: '8888',
+        campaign_id: '8888',
         country: 'MK',
         startDate: '20220101',
         endDate: '20220101'
@@ -52,9 +51,9 @@
   ],
   latam: [
     {
-        id: 10,
-        name: "Resource #10",
-        campaigns_id: '1010',
+        id: 11,
+        name: "Resource #11",
+        campaign_id: '2332',
         country: 'MX',
         startDate: "20220110",
         endDate: "20220111",
@@ -154,5 +153,14 @@ const RESOURCES = [
     type: "order",
     region: "latam",
     code: "mx_1010"
+  },
+  {
+    id: 11,
+    name: "Resource #11",
+    startDate: "20220110",
+    endDate: "20220111",
+    type: "campaign",
+    region: "latam",
+    code: "mx_2332"
   }
 ];
