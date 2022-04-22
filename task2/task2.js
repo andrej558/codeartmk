@@ -164,3 +164,82 @@ const RESOURCES = [
     code: "mx_2332"
   }
 ];
+
+
+alert("To view changes open the Console via Inspect Element");
+
+var slct = document.getElementById("select");
+
+
+function Execute(){
+
+  var val = slct.value;
+
+  
+  newArray = RESOURCES.filter(function(el){
+
+    return el.type == val;
+
+
+  });
+
+  let regions = [];
+
+  newArray.forEach(element => {
+    
+    regions.push(element.region);
+  });
+
+
+  regions = remove_duplicates_es6(regions);
+
+
+//console.log(regions);
+
+//console.log(newArray);
+
+
+let newObj = {};
+
+for(var i=0; i< regions.length; i++){
+
+  newObj[regions[i]] = [];
+}
+
+
+for(var j=0; j< newArray.length; j++){
+
+
+  var temp = newArray[j];
+
+  var reg = temp.region;
+
+
+  delete temp.region;
+  
+  delete temp.type;
+
+  temp.campaign_id = temp.code.split("_")[1];
+
+  delete temp.code;
+
+
+  newObj[reg].push(temp);
+  
+  
+}
+
+
+
+  console.log(newObj);
+
+}
+
+
+
+function remove_duplicates_es6(arr) {
+  let s = new Set(arr);
+  let it = s.values();
+  return Array.from(it);
+}
+

@@ -1,0 +1,19 @@
+tr{
+    cursor: pointer;
+}
+
+
+input[type='checkbox']{
+
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+
+Link, a{
+    text-decoration: none!important;
+    
+    color: white;
+}
+
