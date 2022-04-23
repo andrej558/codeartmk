@@ -11,6 +11,8 @@ import TodoDetails from '../Todos/TodosDetails/todosDetails';
 
 import Header from "../Header/header"
 
+import Body from "../Body/body"
+
 class App extends Component{
 
 
@@ -76,6 +78,11 @@ class App extends Component{
             <Header/>
             <Routes>
 
+              <Route path={"/"} element = {
+
+                  <Body/>
+              }/>
+
               <Route path={"/todos"} element = {
                 
                 <TodosList todos = {this.state.filteredTodos}
@@ -133,20 +140,13 @@ class App extends Component{
 
     TodosService.deleteTodo(id)
     .then(()=>{
-      //console.log(222);
-      //this.setState({});
-
-      //this.state.todos.splice(id,1);
 
       this.setState({
 
         todos: this.state.todos.filter(todo=>todo.id != id),
-        //filteredTodos : this.state.todos.filter(todo=>todo.id != id)
         filteredTodos : this.state.filteredTodos.filter(todo=>todo.id != id)
       })
 
-      //this.loadTodos();
-      //window.location.reload(false);
     });
   }
     
