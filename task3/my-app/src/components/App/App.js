@@ -9,6 +9,8 @@ import TodosService from '../../repository/todosService';
 
 import TodoDetails from '../Todos/TodosDetails/todosDetails';
 
+import Header from "../Header/header"
+
 class App extends Component{
 
 
@@ -69,7 +71,7 @@ class App extends Component{
           <div className='container'>
 
             
-
+            <Header/>
             <Routes>
 
               <Route path={"/todos"} element = {
