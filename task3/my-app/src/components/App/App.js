@@ -48,6 +48,8 @@ class App extends Component{
 
     this.setState({
       
+      
+
       filteredTodos: this.state.todos.filter(t=>t.completed.toString() == "false")
 
     })
@@ -137,7 +139,10 @@ class App extends Component{
       //this.state.todos.splice(id,1);
 
       this.setState({
-        filteredTodos : this.state.todos.filter(todo=>todo.id != id)
+
+        todos: this.state.todos.filter(todo=>todo.id != id),
+        //filteredTodos : this.state.todos.filter(todo=>todo.id != id)
+        filteredTodos : this.state.filteredTodos.filter(todo=>todo.id != id)
       })
 
       //this.loadTodos();
