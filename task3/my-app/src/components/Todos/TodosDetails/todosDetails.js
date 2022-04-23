@@ -9,20 +9,54 @@ const TodoDetails = (props) =>{
 
         <div>
 
-            {props.userDetails.id}
+            
+            <div id="name">
+                <h2>Name:</h2>
+                <p>
+                {props.userDetails.name}
+                </p>
+            
 
-            {props.userDetails.name}
+            </div>
 
 <br/>
-            {props.userDetails.username}
+        <div id="username">
+            <h2>Username:</h2>
+        <p>
+        {props.userDetails.username}
+        </p>
+        </div>
+        
+            
 
             <br/>
 
+            <div id="email">
+            <h2>Email:</h2>
+            <a href={"mailto:" + props.userDetails.email}>
             {props.userDetails.email}
+            </a>
+            </div>
+            
+            
+            {/* <div>
+                {Object.keys(props.userDetails.address).map((objKey, index)=>{
+
+                     <div key={index}>
+                         <p>{objKey.street}</p>
+                    </div>
+
+                })}
+            </div> */}
 
         
-           
+           {/* <p>
+               {props.userDetails.address.suite}
+           </p>
 
+            <p>
+            {props.userDetails.suite}
+            </p> */}
 
         </div>
 

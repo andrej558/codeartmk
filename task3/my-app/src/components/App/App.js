@@ -71,11 +71,12 @@ class App extends Component{
 
     return(
       <Router>
+        <Header/>
         <main>
           <div className='container'>
 
             
-            <Header/>
+            
             <Routes>
 
               <Route path={"/"} element = {
