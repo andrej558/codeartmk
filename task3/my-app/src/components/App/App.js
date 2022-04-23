@@ -134,7 +134,13 @@ class App extends Component{
       //console.log(222);
       //this.setState({});
 
-      this.loadTodos();
+      //this.state.todos.splice(id,1);
+
+      this.setState({
+        filteredTodos : this.state.todos.filter(todo=>todo.id != id)
+      })
+
+      //this.loadTodos();
       //window.location.reload(false);
     });
   }
